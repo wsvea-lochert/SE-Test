@@ -1,7 +1,6 @@
 package no.hiof.softwareEngineering;
 
-import no.hiof.softwareEngineering.Model.Event;
-import no.hiof.softwareEngineering.Model.Location;
+import no.hiof.softwareEngineering.Model.*;
 
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -12,8 +11,17 @@ public class Main {
 
        /* Event soppturMedKarpe = new Event("Sopptur med Karpe","Musikk", "En fin konsert med bra musikk", 18, 150,
                                                      LocalDate.of(2019, 06, 19), new Location("Halden", "B R A veien 6d"));*/
+        Person william = new Person("William", "Svea-Lochert");
+        OrganizerAdminAccount admin = new OrganizerAdminAccount(william, "admin", "admin");
+        EventOrganizer test = new EventOrganizer("test", "test123", admin);
 
-        runApplication();
+        System.out.println(test);
+
+        //test.createNewAdmin();
+
+        Login.logInToSystem();
+
+      //  runApplication();
     }
 
     public static void runApplication(){
@@ -39,9 +47,6 @@ public class Main {
             }
         }
     }
-
-
-
 
 
 }
