@@ -49,35 +49,6 @@ public class Event {
         }
     }
 
-    public static void CreateEvent(){
-        Scanner userInput = new Scanner(System.in);
-
-        System.out.print("Event navn: ");
-        String eventName = userInput.nextLine();
-        System.out.print("Kategori: ");
-        String category = userInput.nextLine();
-        System.out.print("Beskrivelse: ");
-        String description = userInput.nextLine();
-
-        System.out.print("Dato(YYYY-MM-DD): ");
-        String date = userInput.nextLine();
-
-        System.out.print("By: ");
-        String city = userInput.nextLine();
-        System.out.print("Gate: ");
-        String street = userInput.nextLine();
-
-        System.out.print("Aldersgrense: ");
-        int ageLimit = userInput.nextInt();
-        System.out.print("Antall billetter: ");
-        int tickets = userInput.nextInt();
-
-
-
-        Event event = new Event(eventName, category, description, ageLimit, tickets, LocalDate.parse(date), new Location(city, street));
-        System.out.println(eventName + " er nå laget.");
-    }
-
     public String getEventName() {
         return eventName;
     }

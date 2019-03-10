@@ -9,44 +9,45 @@ public class Main {
 
     public static void main(String[] args) {
 
-       /* Event soppturMedKarpe = new Event("Sopptur med Karpe","Musikk", "En fin konsert med bra musikk", 18, 150,
-                                                     LocalDate.of(2019, 06, 19), new Location("Halden", "B R A veien 6d"));*/
-        Person william = new Person("William", "Svea-Lochert");
-        OrganizerAdminAccount admin = new OrganizerAdminAccount(william, "admin", "admin");
-        EventOrganizer test = new EventOrganizer("test", "test123", admin);
+       /* Event soppturMedKarpe = new Event("Sopptur med Karpe","Musikk", "En fin konsert med bra musikk", 18, 150, LocalDate.of(2019, 06, 19), new Location("Halden", "B R A veien 6d"));*/
 
-        System.out.println(test);
+        OrganizerAdminAccount admin = new OrganizerAdminAccount(new Person("William", "Svea-Lochert"), "admin", "admin");
+        EventOrganizer test = new EventOrganizer("Karpe", "KarpeD1112", admin);
+
+        // System.out.println(test);
 
         //test.createNewAdmin();
+        /*
 
-        Login.logInToSystem();
+        tempOrganizer = Login.logInToSystem();
+        tempOrganizer.createNewAdmin();
+
+        System.out.println(tempOrganizer);*/
+        runAppliocationV2();
 
       //  runApplication();
     }
 
-    public static void runApplication(){
-
-        Scanner selection = new Scanner(System.in);
+    private static void runAppliocationV2(){
+        EventOrganizer tempOrganizer;
+        Scanner userInput = new Scanner(System.in);
         int option = 0;
 
-        while(option != 3) {
-            System.out.print("(1) Lag nytt event // (2) Se alle events // (3) lukk applikasjonen // Skriv inn valg: ");
-            option = selection.nextInt();
-            switch (option) {
+        while(option < 3){
+            System.out.print("1: login // 2: donno yet // 3 donno yet: ");
+            option = userInput.nextInt();
+            switch (option){
                 case 1:
-                    Event.CreateEvent();
+                    tempOrganizer = Login.logInToSystem();
+                    if (tempOrganizer != null){
+                        tempOrganizer.manageOrganizer();
+                    }
                     break;
                 case 2:
-                    Event.printEventList();
                     break;
                 case 3:
                     break;
-                default:
-                    System.out.print("Ugyldig valg.");
-                    runApplication();
             }
         }
     }
-
-
 }
