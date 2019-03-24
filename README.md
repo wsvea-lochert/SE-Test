@@ -1,9 +1,12 @@
-﻿# softwareEngineering
+# softwareEngineering
 
-#### test application for Software Engineering repo.
-
+#### A flexsible booking application.
 ## Developers
 
+- Martin Skåksrud
+- Elin Skaret Larald
+- Enis Jasharaj
+- Ingrid Elise Krogh Dahl
 - William Svea-Lochert    
 
 
